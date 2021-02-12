@@ -9,5 +9,4 @@
 
 //Prueba de pachi insta
 
-// si esto se subio les quiero avisar que ya guarde la pw
-// el user.password funciono xd
+// no me funciono lo de user.password D':
