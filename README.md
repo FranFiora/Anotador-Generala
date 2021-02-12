@@ -8,3 +8,6 @@
 // me llamo ulises pero diganme Yasou
 
 //Prueba de pachi insta
+
+// si esto se subio les quiero avisar que ya guarde la pw
+// el user.password funciono xd
