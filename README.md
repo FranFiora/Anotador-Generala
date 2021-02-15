@@ -1,12 +1,4 @@
 "# pruebagrupo" 
-// Me llamo Franco pero diganme Fiora
+"Bueno, aca les dejo la carpeta www, copian y pegan en su template y gg"
 
-//Prueba de Vicky ***
-//Vicky tiro muchos push, borre 2 lineas
-
-//Prueba de Uli a ver si ahora funka
-// me llamo ulises pero diganme Yasou
-
-//Prueba de pachi insta
-
-// no me funciono lo de user.password D':
+//"Estuvo haciendo unas cositas con el index, pero despues organizamos bien todo el miércoles, saludos"
