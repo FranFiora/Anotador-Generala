@@ -29,6 +29,9 @@ var app = new Framework7({
 
 var mainView = app.views.create('.view-main');
 
+var player1="";
+var player2="";
+
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
@@ -41,9 +44,15 @@ $$(document).on('page:init', function (e) {
 })
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
-    console.log('anotar cargada');
+    console.log('index cargada');
 
     $$('#inGame').on('click', function(){
+
+        player1=$$('#j1').val();
+        player2=$$('#j2').val();
+        
+        console.log(player1, player2);
+
         mainView.router.navigate('/anotar/');
     })
 })
