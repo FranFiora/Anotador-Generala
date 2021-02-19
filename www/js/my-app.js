@@ -31,6 +31,9 @@ var mainView = app.views.create('.view-main');
 
 var player1="";
 var player2="";
+var id="";
+var valorPuntaje="";
+var total=0;
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -63,16 +66,85 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
     $$('#LJugador1').text(player1);
     $$('#LJugador2').text(player2);
 
+    $$('.Dclick').on('click', function(){
+    	id = this.id;
+    	console.log(id);
+    	valorPuntaje = id.replace('j1d', '');
+    	console.log(valorPuntaje);
+    })
 
-    /*var popup = app.popup.create({
-  content: '<div class="popup">...</div>',
-  on: {
-    opened: function () {
-      console.log('Popup opened')
-    }
-  }
-})*/
+
+    var ac2 = app.actions.create({
+        buttons: [
+          {
+            text: 'Dado ',
+            label: true
+          },
+          {
+            text: 'Uno',
+            onClick: function () {
+              valorDado(1);
+              Total();
+            }
+          },
+          {
+            text: 'Dos',
+            onClick: function () {
+              valorDado(2);
+              Total();
+            }
+          },
+          {
+            text: 'Tres',
+            onClick: function () {
+              valorDado(3);
+              Total();
+            }
+          },
+          {
+            text: 'Cuatro',
+            onClick: function () {
+              valorDado(4);
+              Total();
+            }
+          },
+          {
+            text: 'Cinco',
+            onClick: function () {
+              valorDado(5);
+              Total();
+            }
+          },
+          {
+            text: 'Tachar',
+            onClick: function () {
+              valorDado(0);
+              Total();
+            }
+          },
+        ]
+      });
+
+    $$('.ac-2').on('click', () => {
+        ac2.open();
+	});
 
 
 
 })
+
+	function valorDado(v) {
+		console.log(v);
+		console.log(valorPuntaje);
+		multi = valorPuntaje * v;
+		$$('#'+id).text(multi);
+	}
+
+	function Total() {
+		for (var i=1; i<=4; i++) {
+			total+=parseInt($$('#j1d'+i).text());
+			console.log(total);
+			$$('#totalj1').text(total);
+		}
+		total=0;
+	}
