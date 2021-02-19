@@ -1,29 +1,70 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
-<div class="page" data-name="about">
+<div class="page" data-name="anotar">
     <div class="navbar">
         <div class="navbar-bg bg-color-deeppurple"></div>
         <div class="navbar-inner">
         <div class="left">
             <i class="icon f7-icons color-white">pencil_circle_fill</i>
         </div>
-        <div class="title">Anotador</div>
+        <div class="title text-color-white">Anotador</div>
         </div>
     </div>
-    <div class="toolbar toolbar-bottom">
+    <div class="toolbar toolbar-bottom bg-color-deeppurple">
                     <div class="toolbar-inner">
                     <!-- Toolbar links -->
-                    <a href="/index/" class="link">Terminar</a>
-                    <a href="#" class="link">Reglas</a>
-                    <a href="#" class="link">Limpiar</a>
+                    <a href="/index/" class="link color-white">Terminar</a>
+                    <a href="#" data-popup=".my-popup" class="popup-open" class="link color-white">Reglas</a>
+                    <a href="#" class="link color-white">Limpiar</a>
                     </div>
                 </div>
-    <div class="page-content">
-        <div class="block-title">Welcome to Framework7</div>
-        <div class="block block-strong">
-        <p>Framework7 - is a free and open source HTML mobile framework to develop hybrid mobile apps or web apps with iOS or Android (Material) native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to. Framework7 is created by Vladimir Kharlampidi (iDangero.us).</p>
-        <p>The main approach of the Framework7 is to give you an opportunity to create iOS and Android (Material) apps with HTML, CSS and JavaScript easily and clear. Framework7 is full of freedom. It doesn't limit your imagination or offer ways of any solutions somehow. Framework7 gives you freedom!</p>
-        <p>Framework7 is not compatible with all platforms. It is focused only on iOS and Android (Material) to bring the best experience and simplicity.</p>
-        <p>Framework7 is definitely for you if you decide to build iOS and Android hybrid app (Cordova or PhoneGap) or web app that looks like and feels as great native iOS or Android (Material) apps.</p>
+    <div id="pageAn" class="page-content color-theme-deeppurple">
+        <div class="block text-align-center">
+        	<div class="row">
+		        <div id="puntajes" class="col">
+		        	<div id=tPuntaje>puntajes</div>
+		        	<div id="uno">1</div>
+		        	<div id="dos">2</div>
+		        	<div id="tres">3</div>
+		        	<div id="cuatro">4</div>
+		        </div>
+                <div class="col">
+    		        <div id="LJugador1" class="col">Jugador 1</div>
+    		        	<div>11</div>
+    		        	<div>22</div>
+    		        	<div>33</div>
+    		        	<div>33</div>
+                </div>
+                <div class="col">
+    		        <div id="LJugador2" class="col">Jugador 2</div>
+    		        	<div>11</div>
+    		        	<div>22</div>
+    		        	<div>33</div>
+    		        	<div>33</div>
+		    	</div>
+		    </div>
         </div>
+
+
+        <div class="popup my-popup">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-bg bg-color-deeppurple"></div>
+                    <div class="navbar-inner">
+                        <div class="title text-color-white">Reglas</div>
+                        <div class="right text-color-white">
+                            <!-- Link to close popup -->
+                            <a class="link popup-close icon f7-icons color-white">xmark_circle</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="page-content text-align-center">
+                    <p>reglasasdasdajdhngfiadgnajdgnajdigiojdghnsdhgnshgsdkgnsjhkdgn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
     </div>
 </div>

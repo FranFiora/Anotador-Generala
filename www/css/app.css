@@ -1,5 +1,7 @@
 /* Your app custom styles here */
-
+#pageInd, #ul1{
+  background-color: #252525;
+}
 
 /* poppins-regular - latin */
 @font-face {

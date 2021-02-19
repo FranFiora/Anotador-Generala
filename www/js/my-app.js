@@ -60,4 +60,19 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
     console.log('anotar cargada');
+    $$('#LJugador1').text(player1);
+    $$('#LJugador2').text(player2);
+
+
+    /*var popup = app.popup.create({
+  content: '<div class="popup">...</div>',
+  on: {
+    opened: function () {
+      console.log('Popup opened')
+    }
+  }
+})*/
+
+
+
 })
