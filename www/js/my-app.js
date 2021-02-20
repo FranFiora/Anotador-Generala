@@ -35,6 +35,8 @@ var id="";
 var dado=0;
 var valorPuntaje="";
 var total=0;
+var servido=0;
+var noservido= 0;
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -75,20 +77,117 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
 
     $$('.Divclick').on('click', function(){
     	id = this.id;
-    	dado = $$('#'+id).attr('dado');
     	console.log(id);
-    	//console.log('dado', dado);
     	valorPuntaje = id.replace('j1d', '');
+
     	console.log('valor', valorPuntaje);
-    	console.log('dado', dado);
 
     })
 
+$$('.Divclick2').on('click', function(){
+      id = this.id;
+      console.log(id);
+      valorPuntaje = id.replace('j2d', '');
 
-    var ac2 = app.actions.create({
+      console.log('valor', valorPuntaje);
+    })
+
+
+/*Boton limpiar*/
+$$('#btnLimpiar').on('click',function(){
+  for (var i=1; i<=11; i++){
+    $$('#j1d'+i).text(0);
+    $$('#j2d'+i).text(0);
+  }
+  Total();
+  Total2();
+});
+
+/*juegos jugador1*/
+    $$('.juegoClick').on('click', function(){
+      id = this.id;
+      console.log(id);
+
+      switch(id){
+        case 'j1d7': servido= 25;
+                      noservido= 20;
+          break;
+        case 'j1d8':servido= 35;
+                      noservido= 30;
+          break;
+        case 'j1d9': servido= 45;
+                      noservido= 40;
+          break;
+        case 'j1d10': servido= 55;
+                      noservido= 50;
+          break;
+        case 'j1d11':servido= 65;
+                      noservido= 60;
+          break;
+          case 'j2d7': servido= 25;
+                      noservido= 20;
+          break;
+        case 'j2d8':servido= 35;
+                      noservido= 30;
+          break;
+        case 'j2d9': servido= 45;
+                      noservido= 40;
+          break;
+        case 'j2d10': servido= 55;
+                      noservido= 50;
+          break;
+        case 'j2d11':servido= 65;
+                      noservido= 60;
+          break;
+
+      }
+    })
+
+/*action sheet juegos j1*/
+var acjj1 = app.actions.create({
         buttons: [
           {
-            text: 'Dado '+dado,
+            text: 'Juego',
+            label: true
+          },
+          {
+            text: 'Servido',
+            onClick: function(){
+                valorJuegoS();
+                Total();
+                Total2();
+            }
+          },
+          {
+            text: 'No Servido',
+            onClick: function(){
+                valorJuegoNS();
+                Total();
+                Total2();
+            }
+          },
+          {
+            text: 'Tachar',
+            onClick: function(){
+              $$('#'+id).text(0);
+              Total();
+              Total2();
+            }
+          },
+        ]
+      });
+$$('.acjj1').on('click', () => {
+        acjj1.open();
+});
+
+
+/*action sheet dados j1*/
+
+   $$('.acdj1').on('click', () => {
+var acdj1 = app.actions.create({
+        buttons: [
+          {
+            text: 'Dado '+valorPuntaje,
             label: true
           },
           {
@@ -96,6 +195,7 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
             onClick: function () {
               valorDado(1);
               Total();
+              Total2();
             }
           },
           {
@@ -103,6 +203,7 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
             onClick: function () {
               valorDado(2);
               Total();
+              Total2();
             }
           },
           {
@@ -110,6 +211,7 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
             onClick: function () {
               valorDado(3);
               Total();
+              Total2();
             }
           },
           {
@@ -117,6 +219,7 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
             onClick: function () {
               valorDado(4);
               Total();
+              Total2();
             }
           },
           {
@@ -124,6 +227,7 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
             onClick: function () {
               valorDado(5);
               Total();
+              Total2();
             }
           },
           {
@@ -131,19 +235,24 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
             onClick: function () {
               valorDado(0);
               Total();
+              Total2();
             }
           },
         ]
       });
+        acdj1.open();
+  });
 
 
-    $$('.ac-2').on('click', () => {
-        ac2.open();
-	});
-
-
+$$('#btnTerminar').on('click',function(){
+  app.dialog.confirm("Puntaje total "+player1+": "+totalj1 +"    Puntaje total "+player2+": "+totalj2, function () {
+          mainView.router.navigate('/index/');
+        });
 
 })
+
+})
+
 
 	function valorDado(v) {
 		console.log(v);
@@ -153,10 +262,31 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
 	}
 
 	function Total() {
-		for (var i=1; i<=6; i++) {
-			total+=parseInt($$('#j1d'+i).text());
-			console.log(total);
-			$$('#totalj1').text(total);
-		}
+      for (var i=1; i<=11; i++) {
+      total+=parseInt($$('#j1d'+i).text());
+      console.log(total);
+      $$('#totalj1').text(total);
+      totalj1=total;
+    }
+    
 		total=0;
 	}
+    function Total2() {
+      for (var i=1; i<=11; i++) {
+      total+=parseInt($$('#j2d'+i).text());
+      console.log(total);
+      $$('#totalj2').text(total);
+      totalj2=total;
+    }
+    
+    total=0;
+  }
+
+  function valorJuegoS(){
+    $$('#'+id).text(servido);
+  }
+  function valorJuegoNS(){
+    $$('#'+id).text(noservido);
+  }
+
+
