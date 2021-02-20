@@ -52,9 +52,9 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 
     $$('#inGame').on('click', function(){
     	if ($$('#j1').val()=="") {
-    		app.dialog.alert('completame 1 kpo');
+    		app.dialog.alert('no completaste los nombres kpo');
     	} else if ($$('#j2').val()=="") {
-    		app.dialog.alert('completame 2 kpo');
+    		app.dialog.alert('completame kpo');
     	} else {
 
         	player1=$$('#j1').val();
