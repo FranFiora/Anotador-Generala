@@ -13,50 +13,58 @@
                     <div class="toolbar-inner">
                     <!-- Toolbar links -->
                     <a href="/index/" class="link color-white">Terminar</a>
-                    <a href="#" data-popup=".my-popup" class="popup-open" class="link color-white">Reglas</a>
+                    <a href="#" data-popup=".my-popup" class="link color-white popup-open">Reglas</a>
                     <a href="#" class="link color-white">Limpiar</a>
                     </div>
                 </div>
-    <div id="pageAn" class="page-content color-theme-deeppurple">
+    <div id="pageAn" class="page-content color-theme-deeppurple text-color-white">
         <div class="block text-align-center">
         	<div class="row">
 		        <div id="puntajes" class="col">
-		        	<div id=tPuntaje>puntajes</div>
-		        	<input type="button" value="UNO" disabled><br>
-                    <input type="button" value="DOS" disabled><br>
-                    <input type="button" value="TRES" disabled><br>
-                    <input type="button" value="CUATRO" disabled><br>
-                    <input type="button" value="CINCO" disabled><br>
-                    <input type="button" value="SEIS" disabled><br>
-                    <input type="button" value="ESCALERA" disabled><br>
-                    <input type="button" value="FULL" disabled><br>
-                    <input type="button" value="POKER" disabled><br>
-                    <input type="button" value="GENERALA" disabled><br>
-                    <input type="button" value="D.GENERALA" disabled><br>
-                    <input type="button" value="SEIS" disabled><br>
-                    <input type="button" value="TOTAL" disabled>
+		        	
+		        	<input type="button" class="btnPnj" value="PUNTAJES" disabled><br>
+                    <input type="button" class="btnPnj" value="UNO" disabled><br>
+                    <input type="button" class="btnPnj" value="DOS" disabled><br>
+                    <input type="button" class="btnPnj" value="TRES" disabled><br>
+                    <input type="button" class="btnPnj" value="CUATRO" disabled><br>
+                    <input type="button" class="btnPnj" value="CINCO" disabled><br>
+                    <input type="button" class="btnPnj" value="SEIS" disabled><br>
+                    <input type="button" class="btnPnj" value="ESCALERA" disabled><br>
+                    <input type="button" class="btnPnj" value="FULL" disabled><br>
+                    <input type="button" class="btnPnj" value="POKER" disabled><br>
+                    <input type="button" class="btnPnj" value="GENERALA" disabled><br>
+                    <input type="button" class="btnPnj" value="D.GENERALA" disabled><br>
+                    <input type="button" class="btnTotal" value="TOTAL" disabled>
 		        </div>
                 <div class="col">
-    		        <div id="LJugador1" class="col">Jugador 1</div>
-    		        	<div id="j1d1" class="ac-2 Dclick">0</div>
-    		        	<div id="j1d2" class="ac-2 Dclick">0</div>
-    		        	<div id="j1d3" class="ac-2 Dclick">0</div>
-    		        	<div id="j1d4" class="ac-2 Dclick">0</div>
-                        <div id="j1d5" class="ac-2 Dclick">0</div>
-                        <div id="j1d6" class="ac-2 Dclick">0</div>
-                        <div id="j1Esc" class="ac-2 Dclick">0</div>
-                        <div id="j1Full" class="ac-2 Dclick">0</div>
-                        <div id="j1Poker" class="ac-2 Dclick">0</div>
-                        <div id="j1Gen" class="ac-2 Dclick">0</div>
-                        <div id="j1DGen" class="ac-2 Dclick">0</div>
-                        <div id="totalj1" class="">0</div>
+    		        <div id="LJugador1" class="col jugador">Jugador 1</div>
+    		        	<div id="j1d1" class="ac-2 Divclick tabla" dado="1">0</div>
+    		        	<div id="j1d2" class="ac-2 Divclick tabla" dado="2">0</div>
+    		        	<div id="j1d3" class="ac-2 Divclick tabla" dado="3">0</div>
+    		        	<div id="j1d4" class="ac-2 Divclick tabla" dado="4">0</div>
+                        <div id="j1d5" class="ac-2 Divclick tabla" dado="5">0</div>
+                        <div id="j1d6" class="ac-2 Divclick tabla" dado="6">0</div>
+                        <div id="j1Esc" class="tabla">0</div>
+                        <div id="j1Full" class="tabla">0</div>
+                        <div id="j1Poker" class="tabla">0</div>
+                        <div id="j1Gen" class="tabla">0</div>
+                        <div id="j1DGen" class="tabla">0</div>
+                        <div id="totalj1" class="taTotal">0</div>
                 </div>
                 <div class="col">
-    		        <div id="LJugador2" class="col">Jugador 2</div>
-    		        	<div>11</div>
-    		        	<div>22</div>
-    		        	<div>33</div>
-    		        	<div>33</div>
+    		        <div id="LJugador2" class="col jugador">Jugador 2</div>
+    		        	<div id="j2d1" class="tabla" dado="1">0</div>
+                        <div id="j2d2" class="tabla" dado="2">0</div>
+                        <div id="j2d3" class="tabla" dado="3">0</div>
+                        <div id="j2d4" class="tabla" dado="4">0</div>
+                        <div id="j2d5" class="tabla" dado="5">0</div>
+                        <div id="j2d6" class="tabla" dado="6">0</div>
+                        <div id="j2Esc" class="tabla">0</div>
+                        <div id="j2Full" class="tabla">0</div>
+                        <div id="j2Poker" class="tabla">0</div>
+                        <div id="j2Gen" class="tabla">0</div>
+                        <div id="j2DGen" class="tabla">0</div>
+                        <div id="totalj2" class="taTotal">0</div>
 		    	</div>
 		    </div>
         </div>
@@ -76,7 +84,10 @@
                     </div>
                     </div>
                     <div class="page-content text-align-center">
-                    <p>reglasasdasdajdhngfiadgnajdgnajdigiojdghnsdhgnshgsdkgnsjhkdgn</p>
+                    	<div class="block">
+                    		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                		</div>
                     </div>
                 </div>
             </div>

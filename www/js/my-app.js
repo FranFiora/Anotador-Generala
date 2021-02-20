@@ -6,7 +6,7 @@ var app = new Framework7({
     // App root element
     root: '#app',
     // App Name
-    name: 'My App',
+    name: 'Anotador',
     // App id
     id: 'com.myapp.test',
     // Enable swipe panel
@@ -32,6 +32,7 @@ var mainView = app.views.create('.view-main');
 var player1="";
 var player2="";
 var id="";
+var dado=0;
 var valorPuntaje="";
 var total=0;
 
@@ -50,13 +51,19 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
     console.log('index cargada');
 
     $$('#inGame').on('click', function(){
+    	if ($$('#j1').val()=="") {
+    		app.dialog.alert('completame 1 kpo');
+    	} else if ($$('#j2').val()=="") {
+    		app.dialog.alert('completame 2 kpo');
+    	} else {
 
-        player1=$$('#j1').val();
-        player2=$$('#j2').val();
+        	player1=$$('#j1').val();
+        	player2=$$('#j2').val();
         
-        console.log(player1, player2);
+        	console.log(player1, player2);
 
-        mainView.router.navigate('/anotar/');
+       		mainView.router.navigate('/anotar/');
+    	}
     })
 })
 // Option 2. Using live 'page:init' event handlers for each page
@@ -66,18 +73,22 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
     $$('#LJugador1').text(player1);
     $$('#LJugador2').text(player2);
 
-    $$('.Dclick').on('click', function(){
+    $$('.Divclick').on('click', function(){
     	id = this.id;
+    	dado = $$('#'+id).attr('dado');
     	console.log(id);
+    	//console.log('dado', dado);
     	valorPuntaje = id.replace('j1d', '');
-    	console.log(valorPuntaje);
+    	console.log('valor', valorPuntaje);
+    	console.log('dado', dado);
+
     })
 
 
     var ac2 = app.actions.create({
         buttons: [
           {
-            text: 'Dado ',
+            text: 'Dado '+dado,
             label: true
           },
           {
@@ -125,6 +136,7 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
         ]
       });
 
+
     $$('.ac-2').on('click', () => {
         ac2.open();
 	});
@@ -141,7 +153,7 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
 	}
 
 	function Total() {
-		for (var i=1; i<=4; i++) {
+		for (var i=1; i<=6; i++) {
 			total+=parseInt($$('#j1d'+i).text());
 			console.log(total);
 			$$('#totalj1').text(total);

@@ -1,6 +1,54 @@
 /* Your app custom styles here */
-#pageInd, #ul1{
+#pageInd, #ul1, #pageAn{
   background-color: #252525;
+}
+
+.jugador  {
+    text-align: center;
+    height: 5vh;
+    background-color: #673ab7;
+    color: white;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla {
+    height: 5vh;
+    background-color: white;
+    color: black;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 1px #ababab3b;
+}
+
+.taTotal {
+    height: 5vh;
+    background-color: #673ab7;
+    color: white;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnPnj {
+    width: 25vw;
+    height: 5vh;
+    background-color: white;
+    color: black;
+    border: 0px;
+}
+
+.btnTotal{
+    width: 25vw;
+    height: 5vh;
+    background-color: #673ab7;
+    color: white;
+    border: 0px;
 }
 
 /* poppins-regular - latin */
