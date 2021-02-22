@@ -75,6 +75,9 @@ $$(document).on('page:init', '.page[data-name="anotar"]', function (e) {
     $$('#LJugador1').text(player1);
     $$('#LJugador2').text(player2);
 
+    Total();
+  	Total2();
+
     $$('.Divclick').on('click', function(){
     	id = this.id;
     	console.log(id);
@@ -95,12 +98,14 @@ $$('.Divclick2').on('click', function(){
 
 /*Boton limpiar*/
 $$('#btnLimpiar').on('click',function(){
-  for (var i=1; i<=11; i++){
-    $$('#j1d'+i).text(0);
-    $$('#j2d'+i).text(0);
-  }
-  Total();
-  Total2();
+	app.dialog.confirm("¿Estas seguro que queres borrar pa?", function () {
+        for (var i=1; i<=11; i++){
+    		$$('#j1d'+i).text(0);
+    		$$('#j2d'+i).text(0);
+  		}
+  	Total();
+  	Total2();
+    });
 });
 
 /*juegos jugador1*/
@@ -245,7 +250,7 @@ var acdj1 = app.actions.create({
 
 
 $$('#btnTerminar').on('click',function(){
-  app.dialog.confirm("Puntaje total "+player1+": "+totalj1 +"    Puntaje total "+player2+": "+totalj2, function () {
+  app.dialog.confirm("Puntaje total "+player1+": "+totalj1 +"         Puntaje total "+player2+": "+totalj2, function () {
           mainView.router.navigate('/index/');
         });
 
